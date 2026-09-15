@@ -94,3 +94,122 @@ int main()
 
     return 0;
 }
+
+
+// #include <iostream>
+// #include <sstream>
+// #include <vector>
+// using namespace std;
+
+// int main()
+// {
+//     int stack[100];
+//     int top = -1;
+
+//     string expression;
+//     cout << "Enter Postfix Expression: ";
+//     getline(cin, expression);
+
+//     stringstream ss(expression);
+//     vector<string> postfix;
+
+//     string token;
+
+//     while(ss >> token)
+//     {
+//         postfix.push_back(token);
+//     }
+
+//     int n = postfix.size();
+
+//     cout << "\nPostfix Expression: ";
+
+//     for(int i = 0; i < n; i++)
+//     {
+//         cout << postfix[i] << " ";
+//     }
+
+//     cout << endl << endl;
+
+//     int pass = 1;
+
+//     for(int i = 0; i < n; i++)
+//     {
+//         cout << "Pass No: " << pass << endl;
+//         cout << "Step No: " << i + 1 << endl;
+
+//         token = postfix[i];
+
+//         // Operand
+//         if(token != "+" && token != "-" &&
+//            token != "*" && token != "/" &&
+//            token != "%")
+//         {
+//             int value = stoi(token);
+
+//             top = top + 1;
+//             stack[top] = value;
+
+//             cout << "Operation: PUSH " << value << endl;
+//         }
+
+//         // Operator
+//         else
+//         {
+//             int operand2 = stack[top];
+//             top = top - 1;
+
+//             int operand1 = stack[top];
+//             top = top - 1;
+
+//             int result;
+
+//             switch(token[0])
+//             {
+//                 case '+':
+//                     result = operand1 + operand2;
+//                     break;
+
+//                 case '-':
+//                     result = operand1 - operand2;
+//                     break;
+
+//                 case '*':
+//                     result = operand1 * operand2;
+//                     break;
+
+//                 case '/':
+//                     result = operand1 / operand2;
+//                     break;
+
+//                 case '%':
+//                     result = operand1 % operand2;
+//                     break;
+//             }
+
+//             top = top + 1;
+//             stack[top] = result;
+
+//             cout << "Operation: "
+//                  << operand1 << " "
+//                  << token << " "
+//                  << operand2
+//                  << " = " << result << endl;
+//         }
+
+//         cout << "Stack: ";
+
+//         for(int j = 0; j <= top; j++)
+//         {
+//             cout << stack[j] << " ";
+//         }
+
+//         cout << endl << endl;
+
+//         pass++;
+//     }
+
+//     cout << "Final Result = " << stack[top] << endl;
+
+//     return 0;
+// }
